@@ -37,19 +37,16 @@ public class ShowTextActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("NimbleDroidV1", "Scenario.begin createActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_text);
-        Log.i("NimbleDroidV1", "Scenario.end createActivity");
 
         // Get the message from the Intent.
-        Log.i("NimbleDroidV1", "Scenario.begin parseIntent");
         Intent intent = getIntent();
         String message = Strings.nullToEmpty(intent.getStringExtra(KEY_EXTRA_MESSAGE));
-        Log.i("NimbleDroidV1", "Scenario.end parseIntent");
 
         // Show message.
         ((TextView)findViewById(R.id.show_text_view)).setText(message);
+        Log.i("NimbleDroidV1", "Scenario.end hybridClickTest");
         Log.i("NimbleDroidV1", "Scenario.end clickActivity");
     }
 
