@@ -59,6 +59,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         // Get the text from the EditText view.
         Log.i("NimbleDroidV1", "Scenario.begin clickActivity");
+        Log.i("NimbleDroidV1", "Scenario.begin appToTestClick");
         final String text = mEditText.getText().toString();
         switch (view.getId()) {
             case R.id.changeTextBt:

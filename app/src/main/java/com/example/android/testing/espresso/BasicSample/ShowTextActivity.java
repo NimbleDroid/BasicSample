@@ -46,7 +46,7 @@ public class ShowTextActivity extends Activity {
 
         // Show message.
         ((TextView)findViewById(R.id.show_text_view)).setText(message);
-        Log.i("NimbleDroidV1", "Scenario.end hybridClickTest");
+        Log.i("NimbleDroidV1", "Scenario.end testToAppClick");
         Log.i("NimbleDroidV1", "Scenario.end clickActivity");
     }
 

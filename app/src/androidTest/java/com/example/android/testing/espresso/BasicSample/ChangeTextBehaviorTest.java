@@ -86,9 +86,10 @@ public class ChangeTextBehaviorTest {
         activityTestRule.launchActivity(intent);
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
             closeSoftKeyboard());
-        Log.i("NimbleDroidV1", "Scenario.begin hybridClickTest");
+        Log.i("NimbleDroidV1", "Scenario.begin testToAppClick");
         onView(withId(R.id.activityChangeTextBtn)).perform(click());
         onView(withId(R.id.show_text_view)).check(matches(withText(STRING_TO_BE_TYPED)));
+        Log.i("NimbleDroidV1", "Scenario.end appToTestClick");
     }
 
     @Test
