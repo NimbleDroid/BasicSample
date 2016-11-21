@@ -38,6 +38,7 @@ public class ShowTextActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("NimbleDroidV1", "Scenario.end startActivity");
         setContentView(R.layout.activity_show_text);
 
         // Get the message from the Intent.

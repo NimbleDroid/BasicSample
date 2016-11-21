@@ -67,7 +67,7 @@ public class ChangeTextBehaviorTest {
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class, true, false);
 
     @Test
-    public void testCodeTest() {
+    public void espressoCodeTest() {
         Log.i("NimbleDroidV1", "Scenario.profile");
         Intent intent = new Intent();
         activityTestRule.launchActivity(intent);
@@ -100,6 +100,18 @@ public class ChangeTextBehaviorTest {
         activityTestRule.launchActivity(intent);
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
             closeSoftKeyboard());
+        onView(withId(R.id.activityChangeTextBtn)).perform(click());
+        onView(withId(R.id.show_text_view)).check(matches(withText(STRING_TO_BE_TYPED)));
+    }
+
+    @Test
+    public void nestedInterleaveTest() {
+        Log.i("NimbleDroidV1", "Scenario.profile");
+        Intent intent = new Intent();
+        activityTestRule.launchActivity(intent);
+        onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
+            closeSoftKeyboard());
+        Log.i("NimbleDroidV1", "Scenario.begin interleaveClick");
         onView(withId(R.id.activityChangeTextBtn)).perform(click());
         onView(withId(R.id.show_text_view)).check(matches(withText(STRING_TO_BE_TYPED)));
     }

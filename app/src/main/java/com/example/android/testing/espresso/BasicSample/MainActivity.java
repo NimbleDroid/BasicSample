@@ -60,6 +60,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // Get the text from the EditText view.
         Log.i("NimbleDroidV1", "Scenario.begin clickActivity");
         Log.i("NimbleDroidV1", "Scenario.begin appToTestClick");
+        Log.i("NimbleDroidV1", "Scenario.end interleaveClick");
         final String text = mEditText.getText().toString();
         switch (view.getId()) {
             case R.id.changeTextBt:
@@ -69,6 +70,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.activityChangeTextBtn:
                 // Second button's interaction: start an activity and send a message to it.
                 Intent intent = ShowTextActivity.newStartIntent(this, text);
+                Log.i("NimbleDroidV1", "Scenario.begin startActivity");
                 startActivity(intent);
                 break;
         }
