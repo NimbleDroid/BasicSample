@@ -64,13 +64,11 @@ public class ChangeTextBehaviorTest {
      * the {@link ActivityTestRule#getActivity()} method.
      */
     @Rule
-    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class, true, false);
+    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
 
     @Test
     public void espressoCodeTest() {
         Log.i("NimbleDroidV1", "Scenario.profile");
-        Intent intent = new Intent();
-        activityTestRule.launchActivity(intent);
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
             closeSoftKeyboard());
         Log.i("NimbleDroidV1", "Scenario.begin clickTest");
@@ -82,8 +80,6 @@ public class ChangeTextBehaviorTest {
     @Test
     public void hybridTest() {
         Log.i("NimbleDroidV1", "Scenario.profile");
-        Intent intent = new Intent();
-        activityTestRule.launchActivity(intent);
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
             closeSoftKeyboard());
         Log.i("NimbleDroidV1", "Scenario.begin testToAppClick");
@@ -95,9 +91,6 @@ public class ChangeTextBehaviorTest {
     @Test
     public void appCodeTest() {
         Log.i("NimbleDroidV1", "Scenario.profile");
-        Intent intent = new Intent();
-        Log.i("NimbleDroidV1", "Scenario.begin coldStart");
-        activityTestRule.launchActivity(intent);
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
             closeSoftKeyboard());
         onView(withId(R.id.activityChangeTextBtn)).perform(click());
@@ -107,8 +100,6 @@ public class ChangeTextBehaviorTest {
     @Test
     public void nestedInterleaveTest() {
         Log.i("NimbleDroidV1", "Scenario.profile");
-        Intent intent = new Intent();
-        activityTestRule.launchActivity(intent);
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
             closeSoftKeyboard());
         Log.i("NimbleDroidV1", "Scenario.begin interleaveClick");

@@ -1,5 +1,5 @@
 plugins {
-    id "com.nimbledroid.profiler" version "1.0.9"
+    id "com.nimbledroid.profiler" version "1.1.2"
 }
 
 apply plugin: 'com.android.application'
@@ -24,18 +24,18 @@ android {
 
 dependencies {
     // App dependencies
-    compile 'com.android.support:support-annotations:23.0.1'
+    compile 'com.android.support:support-annotations:24.2.0'
     compile 'com.google.guava:guava:18.0'
     // Testing-only dependencies
     // Force usage of support annotations in the test app, since it is internally used by the runner module.
-    androidTestCompile 'com.android.support:support-annotations:23.0.1'
-    androidTestCompile 'com.android.support.test:runner:0.4.1'
-    androidTestCompile 'com.android.support.test:rules:0.4.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.android.support:support-annotations:24.2.0'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
 }
 
 nimbledroid {
     apiKey System.env.NIMBLE_KEY
-    testApkFilename 'app-debug-androidTest-unaligned.apk'
+    testApkFilename 'app-debug-androidTest.apk'
     variant 'debug'
 }

@@ -52,7 +52,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         mTextView = (TextView) findViewById(R.id.textToBeChanged);
         mEditText = (EditText) findViewById(R.id.editTextUserInput);
-        Log.i("NimbleDroidV1", "Scenario.end coldStart");
+        Log.i("NimbleDroidV1", "Scenario.coldStartupEnd coldStart");
+        Log.i("NimbleDroidV1", "ColdStartup.end");
     }
 
     @Override
